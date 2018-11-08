@@ -1,0 +1,5 @@
+#这个是最基本的配置文件,会被加载所有属性
+spring:
+  profiles:
+    active: dev
+    #表示激活application-dev文件

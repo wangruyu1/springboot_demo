@@ -1,0 +1,7 @@
+#测试环境配置文件
+spring:
+  profiles:
+    include: 
+    #表示加载config/application-datasource-dev文件
+    - datasource-dev
+    - tomcat

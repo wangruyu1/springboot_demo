@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  #  压缩返回结果
+  compression:
+    enabled: true
+    min-response-size: 2048
+  tomcat:
+    basedir: tomcat
+    accesslog:
+      enabled: true
+      pattern: "%t [%I] %{X-Forwarded-For}i %a %r %s (%D ms)"
