@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    database: MYSQL
+    #日志显示sql语句
+    show-sql: true
+    #
+    hibernate:
+      #create, create-drop, update, validate, none. update=更新数据库表字段,不存在则创建
+      ddl-auto: update
+      #
+      naming-strategy:  org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
