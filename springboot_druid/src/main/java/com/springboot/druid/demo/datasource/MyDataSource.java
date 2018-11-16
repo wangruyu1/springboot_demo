@@ -1,7 +1,5 @@
 package com.springboot.druid.demo.datasource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +15,11 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
+// 代理方式
 @EnableTransactionManagement(proxyTargetClass = true)
+// 数据库访问的类所在的包
 @EnableJpaRepositories(basePackages = { "com.springboot.druid.demo.repository" })
+// 实体类所在的包
 @EntityScan(basePackages = { "com.springboot.druid.demo.bean" })
 public class MyDataSource {
 
@@ -30,7 +31,7 @@ public class MyDataSource {
 
 	@Primary
 	@Bean(name = "springPoiDataSource")
-	@ConfigurationProperties("spring.datasource") // 该注解可以自动注入对象的属性(对应配置文件news.datasource下的属性)
+	@ConfigurationProperties("spring.datasource") // 该注解可以自动注入对象的属性(对应配置文件spring.datasource下的属性)
 	public DruidDataSource newsPoiDataSource() {
 		return new DruidDataSource();
 	}

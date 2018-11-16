@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>springboot_druid</name>
+	<name>springboot_jpa_druid</name>
 	<description>springboot,druid整合模板</description>
 
 	<parent>
